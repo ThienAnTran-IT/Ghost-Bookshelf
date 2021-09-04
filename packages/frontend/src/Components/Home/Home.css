@@ -13,6 +13,13 @@
 .home-menu-container {
     list-style-type: none;
     padding: 0;
+    border-bottom: 1px solid #DCD6F7;
+    padding-bottom: 10px;
+}
+
+.home-menu-title {
+    border-bottom: 1px solid #DCD6F7;
+    padding-bottom: 10px;
 }
 
 .home-books-add-button {

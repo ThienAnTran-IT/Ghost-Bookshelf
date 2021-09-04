@@ -1,0 +1,48 @@
+.add-modal-header {
+
+}
+
+.add-modal-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #424874;
+}
+
+.add-modal-body {
+
+}
+
+.add-modal-footer {
+    border-top: none;
+    display: flex;
+    justify-content: center;
+}
+
+.add-button {
+    color: #424874;
+    background-color: #DCD6F7;
+    border: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.add-button:hover, .add-button:focus {
+    color: #DCD6F7 !important;
+    background-color: #424874 !important;
+}
+
+.add-book-form {
+    margin: 0 15px;
+}
+
+.add-form-group {
+    margin-bottom: 25px !important;
+}
+
+.add-form-label {
+    color: #424874
+}
+
+.add-form-shelf-option {
+    color: #424874
+}

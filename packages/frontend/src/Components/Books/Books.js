@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { MdModeEdit, MdDelete } from 'react-icons/md';
 
-import './index.css';
+import './Books.css';
 import { mockBooks } from './__tests__/mock'
 
 const useStyles = makeStyles({
