@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,8 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { MdModeEdit, MdDelete } from 'react-icons/md';
 
 import './index.css';
+import { mockBooks } from './__tests__/mock'
 
 const useStyles = makeStyles({
   table: {
@@ -30,29 +32,33 @@ const rows = [
 
 const Books = () => {
   const classes = useStyles();
+  const [booksData, setBooksData] = useState(mockBooks)
 
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+        <TableHead className="books-table-head">
+          <TableRow className="books-table-head-row">
+            <TableCell className="books-table-head-cell">Cover</TableCell>
+            <TableCell className="books-table-head-cell">Title</TableCell>
+            <TableCell className="books-table-head-cell">Author</TableCell>
+            <TableCell className="books-table-head-cell">Shelves</TableCell>
+            <TableCell className="books-table-head-cell"></TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
+        <TableBody className="books-table-body">
+          {booksData.map((book) => (
+            <TableRow className="books-table-body-row" key={book.id}>
+              <TableCell className="books-table-body-cell" component="th" scope="row">
+                <img className="books-covers" src={book.cover} />
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell className="books-table-body-cell">{book.title}</TableCell>
+              <TableCell className="books-table-body-cell">{book.author}</TableCell>
+              <TableCell className="books-table-body-cell">{book.shelf}</TableCell>
+              <TableCell className="books-table-body-cell">
+                <MdModeEdit className="books-ic-actions" />
+                <MdDelete className="books-ic-actions" />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
