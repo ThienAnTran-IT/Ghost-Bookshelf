@@ -1,0 +1,31 @@
+.home-container {
+    margin: 20px auto;
+}
+
+.home-bookshelf-menu {
+    /* background-color: aqua; */
+}
+
+.home-books-main {
+    /* background-color: bisque; */
+}
+
+.home-menu-container {
+    list-style-type: none;
+    padding: 0;
+}
+
+.home-books-add-button {
+    border: none;
+    background-color: #DCD6F7;
+    color: #424874;
+    margin-bottom: 20px;
+    display: flex;
+    float: right;
+    font-weight: 600;
+}
+
+.home-books-add-button:hover {
+    background-color: #424874;
+    color: #DCD6F7;
+}
