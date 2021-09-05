@@ -14,10 +14,20 @@ const Home = () => {
 
     const closeAddBookModal = () => setIsAddBookModalOpen(false);
 
-    const addNewBook = (bookInfo) => {
-        console.log("add new book");
+    const handleSubmit = (event) => {
+        console.log('A name was submitted: ', event);
+        const name = event.target['add-book-form-title'].value;
+        const author = event.target['add-book-form-author'].value;
+        const shelf = event.target['add-book-form-bookshelf'].value;
+        const cover = event.target['add-book-form-cover'].value;
+        console.log('Name: ', name);
+        console.log('author: ', author);
+        console.log('shelf: ', shelf);
+        console.log('cover: ', cover);
+        event.preventDefault();
+
         setIsAddBookModalOpen(false);
-    }
+      }
 
     return (
         <Container className='home-container'>
@@ -42,7 +52,7 @@ const Home = () => {
                         </Modal.Header>
 
                         <Modal.Body className="add-modal-body">
-                            <Form className="add-book-form">
+                            <Form className="add-book-form" onSubmit={handleSubmit}>
                                 <Form.Group className="mb-3 add-form-group" controlId="add-book-form-title">
                                     <Form.Label className="add-form-label">Title</Form.Label>
                                     <Form.Control type="text" className="add-form-text" placeholder="Enter email" required />
@@ -62,8 +72,13 @@ const Home = () => {
                                     </Form.Select>
                                 </Form.Group>
 
+                                <Form.Group className="mb-3 add-form-group" controlId="add-book-form-cover">
+                                    <Form.Label className="add-form-label">Add a cover image for this book</Form.Label>
+                                    <Form.Control type="file" />
+                                </Form.Group>
+
                                 <Modal.Footer className="add-modal-footer">
-                                    <Button className="add-button" variant="primary" onClick={addNewBook}>ADD</Button>
+                                    <Button className="add-button" variant="primary" type="submit">ADD</Button>
                                 </Modal.Footer>
                             </Form>
                         </Modal.Body>
